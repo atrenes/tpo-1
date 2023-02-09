@@ -1,4 +1,4 @@
-package main.java.task1;
+package task1;
 
 public class SecFunction {
     public static double sec(double x, int iter) {

@@ -1,4 +1,4 @@
-package test.java.task1;
+package task1;
 
 
 public class SecFunctionTest {
