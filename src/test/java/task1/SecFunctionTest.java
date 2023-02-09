@@ -11,7 +11,7 @@ public class SecFunctionTest {
     @ParameterizedTest
     @ValueSource(doubles = {Math.PI/2, -Math.PI/2, 5*Math.PI/2, -3*Math.PI/2})
     public void restrictedXCheck(double value) {
-        Assertions.assertTrue(Double.isNaN(SecFunction.sec(value, iter)));
+        Assertions.assertTrue(Double.isNaN(task1.SecFunction.sec(value, iter)));
     }
 
     @ParameterizedTest
