@@ -42,6 +42,10 @@ public class Human {
         this.action = action;
     }
 
+    public boolean canThink(int soundFrequency) {
+        return !(soundFrequency > 0 && soundFrequency <= 200);
+    }
+
     @Override
     public String toString() {
         return  "id: " + this.personId +

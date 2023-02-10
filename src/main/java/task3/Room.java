@@ -6,14 +6,30 @@ public class Room {
 
     private String smell;
     private String sound;
+    private int soundFrequency;
     private final ArrayList<Human> humans;
     private final ArrayList<Thing> things;
 
-    public Room(String smell, String sound, ArrayList<Human> humans, ArrayList<Thing> things) {
+    public Room(String smell, String sound, int soundFrequency, ArrayList<Human> humans, ArrayList<Thing> things) {
         this.smell = smell;
         this.sound = sound;
+        this.soundFrequency = soundFrequency > 0 ? soundFrequency : 1;
         this.humans = humans;
         this.things = things;
+    }
+
+    public int getSoundFrequency() {
+        return soundFrequency;
+    }
+
+    public void setSoundFrequency(int soundFrequency) {
+        if (soundFrequency > 0) {
+            this.soundFrequency = soundFrequency;
+        }
+    }
+
+    public Human getHumanByIndex(int index) {
+        return this.humans.get(index);
     }
 
     public String getSmell() {
@@ -60,6 +76,7 @@ public class Room {
     public String toString() {
         return  "в комнате запах " + this.smell +
                 " и звук " + this.sound +
+                " на частоте " + this.soundFrequency +
                 ", " + this.humans.size() + " людей" +
                 " и " + this.things.size() + " существ";
     }

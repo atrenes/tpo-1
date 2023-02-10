@@ -26,7 +26,7 @@ public class DomainTest {
         humans.add(ford);
         humans.add(artur);
         things.add(thing);
-        room = new Room("раздражающий прелый", "низкий гул", humans, things);
+        room = new Room("раздражающий прелый", "низкий гул", 200, humans, things);
     }
 
     @Test
@@ -35,7 +35,7 @@ public class DomainTest {
         assertEquals(ford.toString(), "id: 1, имя: Форд, пол: мужчина, делает: ищет выключатель, держит спичку которая" + (!match.getIsLit() ? " не " : "") + "горит");
         assertEquals(artur.toString(), "id: 2, имя: Артур, пол: мужчина, делает: ощупал себя, не держит спичку");
         assertEquals(thing.toString(), "имя существа: фигура, характеристика: нечеловеческая");
-        assertEquals(room.toString(), "в комнате запах раздражающий прелый и звук низкий гул, 2 людей и 1 существ");
+        assertEquals(room.toString(), "в комнате запах раздражающий прелый и звук низкий гул на частоте " + room.getSoundFrequency() + ", 2 людей и 1 существ");
     }
 
     @Test
@@ -101,5 +101,15 @@ public class DomainTest {
         assertEquals(human.getAction(), "читает");
         human.setAction("отдыхает");
         assertEquals(human.getAction(), "отдыхает");
+    }
+
+    @Test
+    public void thinkCheck() {
+        Human human = new Human(3, "Джейн", "женщина", "читает");
+        room.addHuman(human);
+        assertFalse(room.getHumanByIndex(2).canThink(room.getSoundFrequency()));
+        room.setSoundFrequency(2000);
+        assertTrue(room.getHumanByIndex(2).canThink(room.getSoundFrequency()));
+        room.removeHuman(human);
     }
 }
