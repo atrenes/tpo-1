@@ -1,4 +1,4 @@
-package main.java.task2;
+package task2;
 
 import java.util.Arrays;
 
@@ -42,4 +42,5 @@ public class QuickSort {
         if (high > i)
             quickSort(array, i, high);
     }
+
 }

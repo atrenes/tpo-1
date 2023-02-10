@@ -1,9 +1,22 @@
 package task3;
 
 public class Human {
+    public Human(Long personId, String name, String sex, HumanState state) {
+        this.personId = personId;
+        this.name = name;
+        this.sex = sex;
+        this.state = state;
+    }
+
     private Long personId;
     private String name;
     private String sex;
+
+    private HumanState state;
+
+    public HumanState getState() {
+        return state;
+    }
 
     public Long getPersonId() {
         return personId;

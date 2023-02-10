@@ -1,8 +1,9 @@
 package task3;
 
 public class Match {
-    private MatchState state;
-    public MatchState getState(){
-        return state;
+    public Match(boolean isLit) {
+        this.isLit = isLit;
     }
+
+    private boolean isLit;
 }
