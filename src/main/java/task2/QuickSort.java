@@ -4,13 +4,7 @@ import java.util.Arrays;
 
 public class QuickSort {
 
-    public static void quickSort(int[] array, int low, int high) {
-        if (array.length == 0)
-            return;//завершить выполнение, если длина массива равна 0
-
-        if (low >= high)
-            return;//завершить выполнение если уже нечего делить
-
+    public static int[] quickSort(int[] array, int low, int high) {
         // выбрать опорный элемент
         int middle = low + (high - low) / 2;
         int opora = array[middle];
@@ -41,6 +35,8 @@ public class QuickSort {
 
         if (high > i)
             quickSort(array, i, high);
+
+        return array;
     }
 
 }
