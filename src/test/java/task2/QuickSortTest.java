@@ -41,4 +41,23 @@ public class QuickSortTest {
         int[] bblArray = bubbleSort(array);
         assertArrayEquals(qsArray, bblArray);
     }
+    @Test
+    public void emptyArray(){
+        int[] array = new int[0];
+        int low = 0;
+        int high = array.length - 1;
+        int[] qsArray = QuickSort.quickSort(array, low, high);
+        assertArrayEquals(qsArray, array);
+    }
+    @Test
+    public void handArray(){
+        int[] array = {127, 4, -20, -60, 127, 195, 14, -28, 163, -69, 172, -20, 18, 178, -87};
+        int[] sortedArray = {-87, -69, -60, -28, -20, -20, 4, 14, 18, 127, 127, 163, 172, 178, 195};
+
+        int low = 0;
+        int high = array.length - 1;
+        int[] qsArray = QuickSort.quickSort(array, low, high);
+        assertArrayEquals(qsArray, sortedArray);
+    }
+
 }

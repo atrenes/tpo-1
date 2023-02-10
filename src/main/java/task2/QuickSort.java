@@ -5,6 +5,9 @@ import java.util.Arrays;
 public class QuickSort {
 
     public static int[] quickSort(int[] array, int low, int high) {
+        if (array.length == 0){
+            return array;
+        }
         // выбрать опорный элемент
         int middle = low + (high - low) / 2;
         int opora = array[middle];
